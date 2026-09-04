@@ -1,5 +1,0 @@
-/* Ktech webfonts. SUBSTITUTION: no brand font binaries were supplied.
-   Archivo (display/UI) and Barlow (body) are the nearest Google Fonts matches to
-   the wordmark's tracked-out grotesque subline. Swap the @import below for local
-   @font-face rules if the real foundry files arrive. */
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");
