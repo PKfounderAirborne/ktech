@@ -57,8 +57,8 @@ function Header({ route, onNavigate }) {
       <header style={{ position: "sticky", top: 0, zIndex: 30, background: "var(--surface-page)", boxShadow: "var(--shadow-header)" }}>
         <TopBar />
         <div style={{ padding: "0 var(--space-4)", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <a href="#" onClick={(e) => { e.preventDefault(); go("home"); }} style={{ border: 0, display: "flex" }}>
-            <Logo height={32} basePath={BASE} />
+          <a href="#" onClick={(e) => { e.preventDefault(); go("home"); }} style={{ border: 0, display: "flex", flexShrink: 0 }}>
+            <Logo height={48} basePath={BASE} />
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
             <IconButton icon="phone-call" label="Call the office" variant="outline" />
@@ -86,11 +86,11 @@ function Header({ route, onNavigate }) {
   return (
     <header style={{ position: "sticky", top: 0, zIndex: 30, background: "var(--surface-page)", boxShadow: "var(--shadow-header)" }}>
       <TopBar />
-      <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 var(--space-6)", height: 84, display: "flex", alignItems: "center", gap: "var(--space-8)" }}>
-        <a href="#" onClick={(e) => { e.preventDefault(); go("home"); }} style={{ border: 0, display: "flex" }}>
-          <Logo height={42} basePath={BASE} />
+      <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 var(--space-6)", height: 84, display: "flex", alignItems: "center", gap: "var(--space-6)" }}>
+        <a href="#" onClick={(e) => { e.preventDefault(); go("home"); }} style={{ border: 0, display: "flex", flexShrink: 0 }}>
+          <Logo height={56} basePath={BASE} />
         </a>
-        <nav style={{ display: "flex", alignItems: "center", gap: "var(--space-5)", marginLeft: "auto" }}>
+        <nav style={{ display: "flex", alignItems: "center", gap: "var(--space-4)", marginLeft: "auto" }}>
           {NAV.map((n) => {
             const on = route === n.id;
             return (
@@ -125,7 +125,7 @@ function Footer({ onNavigate }) {
     <footer style={{ background: "var(--surface-ink)", color: "var(--text-inverse)" }}>
       <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: m ? "var(--space-10) var(--space-4) var(--space-6)" : "var(--space-16) var(--space-6) var(--space-8)", display: "grid", gridTemplateColumns: m ? "1fr" : "1.4fr 1fr 1fr 1fr", gap: m ? "var(--space-8)" : "var(--space-10)" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
-          <Logo variant="white" height={40} basePath={BASE} />
+          <Logo variant="white" height={120} basePath={BASE} style={{ alignSelf: "flex-start", width: "auto", flexShrink: 0 }} />
           <p style={{ font: "var(--type-body-sm)", color: "#b6b8c2", maxWidth: 300 }}>
             Established nearly 40 years ago in Dublin. One of the first companies licensed by the Private Security Authority.
           </p>
