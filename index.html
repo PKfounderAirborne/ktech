@@ -8,7 +8,7 @@
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
-<script src="ds/_ds_bundle.js"></script>
+<script src="ds/ktech-bundle.js"></script>
 <style>
   html, body { margin: 0; height: 100%; background: var(--surface-subtle); font-family: var(--font-body); }
   a { color: var(--blue-600); }
@@ -48,7 +48,7 @@ function Shell() {
       <div ref={scrollRef} style={{ flex: "1 1 auto", overflowY: "auto", overflowX: "hidden" }}>
         {mobile ? (
           <div style={{ display: "flex", justifyContent: "center", padding: "28px 20px 56px" }}>
-            <div style={{ width: 390, flex: "0 0 390px", background: "var(--surface-page)", border: "1px solid var(--ink-300)", borderRadius: 6, boxShadow: "var(--shadow-lg)" }}>{site}</div>
+            <div style={{ width: 360, flex: "0 0 360px", background: "var(--surface-page)", border: "1px solid var(--ink-300)", borderRadius: 6, boxShadow: "var(--shadow-lg)" }}>{site}</div>
           </div>
         ) : site}
       </div>
