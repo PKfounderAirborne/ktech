@@ -1,0 +1,88 @@
+:root{
+  /* --- Base palette: Ktech blue --- */
+  --blue-900:#0c0c56; /* deepest navy, sampled from banner gradient */
+  --blue-800:#141a63;
+  --blue-700:#1d2673;
+  --blue-600:#273385; /* KTECH BLUE — the K in the wordmark. Primary brand colour */
+  --blue-500:#3b4791;
+  --blue-400:#5f6bb0;
+  --blue-300:#959ccf;
+  --blue-200:#c6cae6;
+  --blue-100:#e6e8f4;
+  --blue-050:#f2f4fa;
+
+  /* --- Base palette: signal cyan (accent rule, links, live indicators) --- */
+  --cyan-700:#0079ae;
+  --cyan-600:#0190cd;
+  --cyan-500:#01a0e4; /* SIGNAL CYAN — sampled from the banner keyline */
+  --cyan-400:#4cbcee;
+  --cyan-200:#a9e0f7;
+  --cyan-100:#e2f4fc;
+
+  /* --- Base palette: ink & neutrals --- */
+  --ink-900:#1d1d1b; /* KTECH BLACK — the "tech" in the wordmark */
+  --ink-800:#2c2c29;
+  --ink-700:#44443f;
+  --ink-600:#5f5f59;
+  --ink-500:#7d7d76;
+  --ink-400:#a3a39c;
+  --ink-300:#c8c8c2;
+  --ink-200:#e2e2de;
+  --ink-100:#efefec;
+  --ink-050:#f7f7f5;
+  --white:#ffffff;
+
+  /* --- Semantic status --- */
+  --status-alarm:#c8102e;
+  --status-alarm-bg:#fdecee;
+  --status-caution:#e08600;
+  --status-caution-bg:#fdf3e3;
+  --status-secure:#1f7a45;
+  --status-secure-bg:#e9f5ee;
+  --status-info:var(--cyan-500);
+  --status-info-bg:var(--cyan-100);
+
+  /* --- Semantic aliases: text --- */
+  --text-heading:var(--ink-900);
+  --text-body:var(--ink-700);
+  --text-muted:var(--ink-500);
+  --text-inverse:var(--white);
+  --text-inverse-muted:#b9c0e0;
+  --text-brand:var(--blue-600);
+  --text-link:var(--blue-600);
+  --text-link-hover:var(--cyan-600);
+
+  /* --- Semantic aliases: surfaces --- */
+  --surface-page:var(--white);
+  --surface-subtle:var(--ink-050);
+  --surface-card:var(--white);
+  --surface-tint:var(--blue-050);
+  --surface-brand:var(--blue-600);
+  --surface-brand-deep:var(--blue-900);
+  --surface-ink:var(--ink-900);
+
+  /* --- Semantic aliases: lines --- */
+  --border-hairline:var(--ink-200);
+  --border-strong:var(--ink-300);
+  --border-brand:var(--blue-600);
+  --border-inverse:rgba(255,255,255,.24);
+  --rule-accent:var(--cyan-500);
+
+  /* --- Semantic aliases: interactive --- */
+  --action-primary:var(--blue-600);
+  --action-primary-hover:var(--blue-700);
+  --action-primary-active:var(--blue-800);
+  --action-secondary:var(--ink-900);
+  --action-secondary-hover:var(--ink-800);
+  --action-focus-ring:var(--cyan-500);
+
+  /* --- Protection gradients over photography --- */
+  --scrim-brand:linear-gradient(90deg,rgba(39,51,133,.94) 0%,rgba(39,51,133,.82) 55%,rgba(12,12,86,.62) 100%); /* @kind other */
+  --scrim-bottom:linear-gradient(180deg,rgba(29,29,27,0) 0%,rgba(29,29,27,.78) 100%); /* @kind other */
+  --duotone-blue:rgba(39,51,133,.72);
+
+  /* --- Brand gradient --- */
+  --gradient-blue-from:#004f85;
+  --gradient-blue-to:#13375b;
+  --gradient-brand:linear-gradient(35deg,#004f85 0%,#13375b 100%); /* @kind other */
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ktech Security &amp; Property Services — concept site</title>
+<link rel="stylesheet" href="ds/styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="ds/ktech-bundle.js"></script>
+<style>
+  html, body { margin: 0; height: 100%; background: var(--surface-subtle); font-family: var(--font-body); }
+  a { color: var(--blue-600); }
+  a:hover { color: var(--cyan-500); }
+  #root { height: 100%; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="KtechSite.jsx"></script>
+<script type="text/babel" data-presets="react">
+function Shell() {
+  const [route, setRoute] = React.useState("home");
+  const [device, setDevice] = React.useState("desktop");
+  const scrollRef = React.useRef(null);
+  const toTop = () => { const el = scrollRef.current; if (el) el.scrollTo({ top: 0 }); };
+  const mobile = device === "mobile";
+  const btn = (on) => ({
+    appearance: "none", border: 0, cursor: "pointer", padding: "6px 14px", minHeight: 30,
+    borderRadius: 3, fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 13,
+    background: on ? "var(--white)" : "transparent", color: on ? "var(--ink-900)" : "#c9cbd6",
+    transition: "background 120ms var(--ease-standard), color 120ms var(--ease-standard)"
+  });
+  const site = <KtechSite route={route} mobile={mobile} onNavigate={setRoute} scrollRef={scrollRef} />;
+  return (
+    <div style={{ height: "100vh", display: "flex", flexDirection: "column", background: "var(--surface-subtle)" }}>
+      <div style={{ flex: "0 0 auto", background: "var(--surface-ink)", color: "var(--text-inverse)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, padding: "0 20px", height: 46, boxShadow: "var(--shadow-sm)", zIndex: 60 }}>
+        <span style={{ display: "flex", alignItems: "baseline", gap: 12, minWidth: 0 }}>
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: "0.18em", textTransform: "uppercase", color: "#fff", whiteSpace: "nowrap" }}>Ktech.ie</span>
+          <span style={{ fontSize: 13, color: "#9a9cab", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>Concept design — click the navigation to browse</span>
+        </span>
+        <span style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,.08)", padding: 3, borderRadius: "var(--radius-sm)", flex: "0 0 auto" }}>
+          <button type="button" style={btn(!mobile)} onClick={() => { setDevice("desktop"); toTop(); }}>Desktop</button>
+          <button type="button" style={btn(mobile)} onClick={() => { setDevice("mobile"); toTop(); }}>Mobile</button>
+        </span>
+      </div>
+      <div ref={scrollRef} style={{ flex: "1 1 auto", overflowY: "auto", overflowX: "hidden" }}>
+        {mobile ? (
+          <div style={{ display: "flex", justifyContent: "center", padding: "28px 20px 56px" }}>
+            <div style={{ width: 360, flex: "0 0 360px", background: "var(--surface-page)", border: "1px solid var(--ink-300)", borderRadius: 6, boxShadow: "var(--shadow-lg)" }}>{site}</div>
+          </div>
+        ) : site}
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Shell />);
+</script>
+</body>
+</html>
